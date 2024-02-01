@@ -1,0 +1,10 @@
+@ReadingClubAPI_.Net_HostAddress = https://localhost:7295
+
+GET {{ReadingClubAPI_.Net_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{ReadingClubAPI_.Net_HostAddress}}/weatherforecast
+
+###
