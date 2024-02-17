@@ -1,13 +1,14 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 namespace Log_inWeb_Api.Models
 {
     public class DAL
     {
         private static int webapicon;
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionString[webapicon].ConnectionString);
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[webapicon].ConnectionString);
         SqlDataAdapter da = null;
         DataTable dt = null;
 
