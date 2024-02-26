@@ -1,4 +1,4 @@
-namespace ReadingClubAPI_.Net
+namespace ReadindBookShop
 {
     public class WeatherForecast
     {
