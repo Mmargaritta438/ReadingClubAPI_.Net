@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadingClubAPI_.Net", "Read
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Log-inWeb_Api", "Log-inWeb_Api\Log-inWeb_Api.csproj", "{19098CC0-5B36-45CC-A15E-6DF9F4C5E8D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookWebAppAutorization", "BookWebAppAutorization\BookWebAppAutorization.csproj", "{7CFF6551-865A-4AE5-9E8C-D9A1F8FFB0B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{19098CC0-5B36-45CC-A15E-6DF9F4C5E8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19098CC0-5B36-45CC-A15E-6DF9F4C5E8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19098CC0-5B36-45CC-A15E-6DF9F4C5E8D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CFF6551-865A-4AE5-9E8C-D9A1F8FFB0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CFF6551-865A-4AE5-9E8C-D9A1F8FFB0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CFF6551-865A-4AE5-9E8C-D9A1F8FFB0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CFF6551-865A-4AE5-9E8C-D9A1F8FFB0B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
