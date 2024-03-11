@@ -284,4 +284,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataReadClBookLayer\Migrations\" />
+  </ItemGroup>
+
 </Project>
