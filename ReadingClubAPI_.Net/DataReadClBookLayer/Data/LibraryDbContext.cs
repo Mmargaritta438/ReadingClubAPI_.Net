@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Models;
 
 namespace ReadingClubSPI_.Net.DataReadClBookLayer.Data
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace BookWebAppAutorization.Data.Indentity
+namespace ReadingClubSPI_.Net.Indentity
 {
     public class ApplicationIdentityUser : IdentityUser
     {

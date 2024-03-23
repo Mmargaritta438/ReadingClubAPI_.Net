@@ -1,8 +1,8 @@
 ﻿using ReadingClubSPI_.Net.BusinessReadClBookLayer.Exceptions;
 using ReadingClubSPI_.Net.BusinessReadClBookLayer.Models.UserBook;
-using ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Contracts;
+using ReadingClubSPI_.Net.Services.Services.Contracts;
 
-namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
+namespace ReadingClubSPI_.Net.Services.Services.Implementations
 {
     public class UserBookService : IUserBookService
     {
@@ -28,7 +28,7 @@ namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
                 throw new ItemAlreadyExistsException($"Login: '{item.Login}' is already used!");
             }
 
-            var user = _mapper.Map<User>(item);
+            var user = _mapper.Map<UserBookService>(item);
             user.Password = _passwordService.HashPassword(user.Password);
             _repositoriesWrapper.Users.Save(user);
 

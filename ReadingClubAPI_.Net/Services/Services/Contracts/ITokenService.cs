@@ -1,6 +1,7 @@
 ﻿using ReadingClubSPI_.Net.BusinessReadClBookLayer.Models.ReadingClBook;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Models;
 
-namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Contracts
+namespace ReadingClubSPI_.Net.Services.Services.Contracts
 {
     public interface ITokenService
     {

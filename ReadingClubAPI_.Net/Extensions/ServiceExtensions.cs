@@ -1,20 +1,14 @@
-﻿using BusinessLayer.Infrastructure.Mapper;
-using DataLayer.Data;
-using DataLayer.Repositories.UnitOfWork;
-using FluentValidation;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Text;
-using BookLibraryAPI.MiddlewareHandlers;
-using BusinessLayer.Exceptions;
-using BusinessLayer.Services.Contracts;
-using BusinessLayer.Services.Implementations;
-using FluentValidation.AspNetCore;
-using BusinessLayer.Infrastructure.Validators.Book;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Contracts;
+using ReadingClubSPI_.Net.Services.Services.Contracts;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Repositories.UnitOfWork;
+using ReadingClubSPI_.Net.BusinessReadClBookLayer.Exceptions;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Data;
+using ReadingClubSPI_.Net.MiddlewareHandlers;
+using ReadingClubSPI_.Net.Services.Services.Implementations;
 
 namespace ReadingClubSPI_.Net.Extensions
 {
@@ -34,13 +28,13 @@ namespace ReadingClubSPI_.Net.Extensions
 
 		public static void ConfigureAutoMapper(this IServiceCollection services)
 		{
-			services.AddAutoMapper(typeof(MappingProfile));
+			//services.AddAutoMapper(typeof(MappingProfile));
 		}
 
 		public static void ConfigureFluentValidation(this IServiceCollection services)
 		{
-			services.AddFluentValidationAutoValidation();
-			services.AddValidatorsFromAssembly(typeof(CreateBookDtoValidator).Assembly); // Register all validators in the assembly
+			//services.AddFluentValidationAutoValidation();
+			//services.AddValidatorsFromAssembly(typeof(CreateBookDtoValidator).Assembly); // Register all validators in the assembly
 		}
 
 		public static void ConfigureBusinessReadClBookServices(this IServiceCollection services)

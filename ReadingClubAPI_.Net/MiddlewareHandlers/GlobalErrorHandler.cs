@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
-using BusinessReadClBookLayer.Exceptions;
-using FluentValidation;
+using ReadingClubSPI_.Net.BusinessReadClBookLayer.Exceptions;
 
 namespace ReadingClubSPI_.Net.MiddlewareHandlers
 {

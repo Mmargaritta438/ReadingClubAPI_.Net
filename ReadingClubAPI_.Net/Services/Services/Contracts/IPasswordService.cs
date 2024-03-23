@@ -1,4 +1,4 @@
-﻿namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Contracts
+﻿namespace ReadingClubSPI_.Net.Services.Services.Contracts
 {
     public interface IPasswordService
     {

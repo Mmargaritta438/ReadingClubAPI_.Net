@@ -1,22 +1,20 @@
-using BookWebAppAutorization.Data;
-using BookWebAppAutorization.Data.Indentity;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using ReadingClubAPI_.Net.Data;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Data;
 using ReadingClubSPI_.Net.Extensions;
+using ReadingClubSPI_.Net.Indentity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-   options.UseSqlServer(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//   options.UseSqlServer(connectionString));
+//builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<ApplicationIdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-.AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddDefaultIdentity<ApplicationIdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//.AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddSwaggerGen(options =>
 {

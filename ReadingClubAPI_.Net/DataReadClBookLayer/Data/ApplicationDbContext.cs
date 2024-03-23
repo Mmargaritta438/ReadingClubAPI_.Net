@@ -1,8 +1,4 @@
-﻿using BookWebAppAutorization.Data.Indentity;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-
-namespace BookWebAppAutorization.Data
+﻿namespace ReadingClubSPI_.Net.DataReadClBookLayer.Data
 {
     //public class ApplicationDbContext : IdentityDbContext<ApplicationIdentityUser, IdentityRole, string>
     //{

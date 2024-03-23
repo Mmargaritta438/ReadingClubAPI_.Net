@@ -1,8 +1,12 @@
 ﻿using ReadingClubSPI_.Net.BusinessReadClBookLayer.Exceptions;
+using ReadingClubSPI_.Net.BusinessReadClBookLayer.Models.ReadingClBook;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Models;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Repositories.UnitOfWork;
+using ReadingClubSPI_.Net.Services.Services.Contracts;
 
-namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
+namespace ReadingClubSPI_.Net.Services.Services.Implementations
 {
-    public class RedingClBookService : IRedingClBookService
+    public class RedingClBookService : IReadingClBookService
     {
         private readonly IRepositoriesWrapper _repositoriesWrapper;
 
@@ -15,7 +19,7 @@ namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
         }
 
 
-        public Book GetById(int id)
+        public ReadingClBook GetById(int id)
         {
             var book = _repositoriesWrapper.Books.Get(id);
             if (book == null)
@@ -25,10 +29,10 @@ namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
 
             return book;
         }
-        public IEnumerable<Book> GetAll()
+        public IEnumerable<ReadingClBook> GetAll()
             => _repositoriesWrapper.Books.GetAll();
 
-        public Book GetByIsbn(string isbn)
+        public ReadingClBook GetByIsbn(string isbn)
         {
             var book = _repositoriesWrapper.Books.GetByIsbn(isbn);
             if (book == null)
@@ -39,7 +43,7 @@ namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
             return book;
         }
 
-        public Book Create(CreateRedingClBook createRedingClBookDto)
+        public ReadingClBook Create(CreateReadingClBook createRedingClBookDto)
         {
             var isUniqueIsbn = _repositoriesWrapper.Books.IsUniqueIsbn(createRedingClBookDto.Isbn);
 
@@ -48,12 +52,12 @@ namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
                 throw new ItemAlreadyExistsException($"ISBN: '{createRedingClBookDto.Isbn}' already exists in database!");
             }
 
-            var book = _mapper.Map<Book>(createRedingClBookDto);
+            var book = _mapper.Map<ReadingClBook>(createRedingClBookDto);
             _repositoriesWrapper.Books.Save(book);
             return book;
         }
 
-        public Book Update(int id, UpdateRedingClBook updateRedingClBook)
+        public ReadingClBook Update(int id, UpdateReadingClBook updateRedingClBook)
         {
             var bookToUpdate = _repositoriesWrapper.Books.Get(id);
 
@@ -69,7 +73,7 @@ namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
         }
 
 
-        public Book Delete(int id)
+        public ReadingClBook Delete(int id)
         {
             var book = GetById(id);
 

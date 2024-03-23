@@ -1,5 +1,5 @@
-﻿using Log_inWeb_Api.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Models.Models;
 using System.Diagnostics;
 
 namespace Log_inWeb_Api.Controllers
@@ -39,13 +39,13 @@ namespace Log_inWeb_Api.Controllers
         {
         }
 
-        [Route("/api/Values/GetLogin")]
-        [HttpPost]
-        public string GetLogin(LoginModel loginModel)
-        {
-            BAL bal = new BAL();
-            string response = bal.GetLogin(loginModel);
-            return response;
-        }
+        //[Route("/api/Values/GetLogin")]
+        //[HttpPost]
+        //public string GetLogin(LoginModel loginModel)
+        //{
+            //BAL bal = new BAL();
+            //string response = bal.GetLogin(loginModel);
+            //return response;
+        //}
     }
 }

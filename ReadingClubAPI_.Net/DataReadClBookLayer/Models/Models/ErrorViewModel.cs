@@ -1,4 +1,4 @@
-namespace Log_inWeb_Api.Models
+namespace ReadingClubSPI_.Net.DataReadClBookLayer.Models.Models
 {
     public class ErrorViewModel
     {

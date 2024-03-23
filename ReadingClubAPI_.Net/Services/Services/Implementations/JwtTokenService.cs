@@ -1,11 +1,12 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using ReadingClubSPI_.Net.BusinessReadClBookLayer.Exceptions;
-using ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Contracts;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Models;
+using ReadingClubSPI_.Net.Services.Services.Contracts;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Implementations
+namespace ReadingClubSPI_.Net.Services.Services.Implementations
 {
     public class JwtTokenService : ITokenService
     {

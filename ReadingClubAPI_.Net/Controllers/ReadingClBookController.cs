@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ReadingClubSPI_.Net.BusinessReadClBookLayer.Models.ReadingClBook;
-using ReadingClubSPI_.Net.BusinessReadClBookLayer.Services.Contracts;
+using ReadingClubSPI_.Net.DataReadClBookLayer.Models;
+using ReadingClubSPI_.Net.Services.Services.Contracts;
 
 namespace ReadingClubSPI_.Net.Controllers
 {
@@ -24,7 +25,7 @@ namespace ReadingClubSPI_.Net.Controllers
         /// </summary>
         [AllowAnonymous]
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<Book>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<ReadingClBook>), StatusCodes.Status200OK)]
         public IActionResult GetAll()
         {
             var books = _ReadingClBookService.GetAll();
@@ -37,7 +38,7 @@ namespace ReadingClubSPI_.Net.Controllers
         /// <param name="id">The ID of the book.</param>
         [AllowAnonymous]
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(Book), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ReadingClBook), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
         public IActionResult GetById(int id)
         {
@@ -51,7 +52,7 @@ namespace ReadingClubSPI_.Net.Controllers
         /// <param name="isbn">The ISBN of the book.</param>
         [AllowAnonymous]
         [HttpGet("{isbn}")]
-        [ProducesResponseType(typeof(Book), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ReadingClBook), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
         public IActionResult GetByIsbn(string isbn)
         {
@@ -65,7 +66,7 @@ namespace ReadingClubSPI_.Net.Controllers
         /// <param name="book">The book to create.</param>
         [Authorize]
         [HttpPost]
-        [ProducesResponseType(typeof(Book), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ReadingClBook), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(void), StatusCodes.Status401Unauthorized)]
         public IActionResult Create([FromBody] CreateReadingClBook? book)
@@ -85,7 +86,7 @@ namespace ReadingClubSPI_.Net.Controllers
         /// <param name="book">The updated book data.</param>
         [Authorize]
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(Book), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ReadingClBook), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(void), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
@@ -105,7 +106,7 @@ namespace ReadingClubSPI_.Net.Controllers
         /// <param name="id">The ID of the book to delete.</param>
         [Authorize]
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(Book), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ReadingClBook), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(void), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
         public IActionResult Delete(int id)
